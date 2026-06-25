@@ -38,7 +38,7 @@ class TestExtractHTML(unittest.TestCase):
             input_url = "https://crawler-test.com"
             input_body = '<html><body></body></html>'
             actual = get_urls_from_html(input_body, input_url)
-            expected = "No Link Found"
+            expected =[]
             self.assertEqual(actual, expected)
 
     def test_get_urls_from_html_3(self):
@@ -59,7 +59,7 @@ class TestExtractHTML(unittest.TestCase):
         input_url = "https://crawler-test.com"
         input_body = '<html><body></body></html>'
         actual = get_images_from_html(input_body, input_url)
-        expected = "No Image Found"
+        expected = []
         self.assertEqual(actual, expected)
 
     def test_get_images_from_html_3(self):
@@ -117,8 +117,8 @@ class TestExtractHTML(unittest.TestCase):
             "url": "https://crawler-test.com",
             "heading": "Test Title",
             "first_paragraph": "This is the first paragraph.",
-            "outgoing_links": 'No Link Found',
-            "image_urls": 'No Image Found'
+            "outgoing_links": [],
+            "image_urls": []
         }
         
         self.assertEqual(actual, expected)
