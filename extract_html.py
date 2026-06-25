@@ -40,7 +40,7 @@ def get_urls_from_html(html: str, base_url: str):
     link_tags = soup.find_all('a')
     
     if link_tags == []:
-        return 'No Link Found'
+        return []
     
     for link_tag in link_tags:
         link = link_tag.get('href')
@@ -59,7 +59,7 @@ def get_images_from_html(html: str, base_url: str):
     link_tags = soup.find_all('img')
     
     if link_tags == []:
-        return 'No Image Found'
+        return []
     
     for link_tag in link_tags:
         link = link_tag.get('src')
